@@ -4,13 +4,19 @@ import { useState } from "react";
 
 
 export const ItemListContainer= ()=>{
-    const [counter, setCounter]=useState(0);
+    const [counter, setCounter]=useState(1);
+    const stock= 5;
     const add =()=>{
-        setCounter(counter+1);
-        console.log(counter)
+        if(counter<5){
+            setCounter(counter+1);
+            console.log(counter);
+        }else{
+            alert('No podés agregar más productos');
+        }
+        
     }
     const decreace =()=>{
-        if(counter>0){
+        if(counter>1){
             setCounter(counter-1);
         }else{
             alert('No podés quitar más productos');
@@ -19,7 +25,7 @@ export const ItemListContainer= ()=>{
     return(
         <Container>
             <h1>Kalia Accesorios</h1>
-            <ItemCount  onAdd={add} onDecreace={decreace} value={counter}/>
+            <ItemCount  onAdd={add} onDecreace={decreace} inital={counter} stock={stock}/>
         </Container>
         
     );
