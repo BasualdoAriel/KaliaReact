@@ -7,7 +7,7 @@ export function ItemList({items}){
     const[products, setProducts]=useState(null);
 
     useEffect(()=>{
-        const task=new Promise((resolve, reject)=>{
+        const task=new Promise((resolve)=>{
             setTimeout(()=>{
                 resolve(items);
             },2000);
@@ -15,22 +15,19 @@ export function ItemList({items}){
         task.then(
             (result)=>{
                 setProducts(result);
-               
             },
             (err)=>{
                 console.log(err);
             }
-        )
-        .catch((err)=>{
+        ).catch((err)=>{
             console.log(err);
-        })
-        .finally(()=>{
+        }).finally(()=>{
             console.log('finalizó carga');
         })
     },)
     return(
         <Container className="d-flex justify-content-center pb-4">
-            {products? products.map(product=><Item item={product}/>):<Spinner animation="border" role="status" variant="info"><span className="visually-hidden">Loading...</span></Spinner>}
+            {products? products.map(product=><Item item={product} key={product.id}/>):<Spinner animation="border" role="status" variant="info"><span className="visually-hidden">Loading...</span></Spinner>}
         </Container>
     )
 }

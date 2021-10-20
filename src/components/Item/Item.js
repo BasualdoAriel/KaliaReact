@@ -6,11 +6,11 @@ export function Item({item}){
             <Card.Img variant="top" src={item.img} className="imgCard"/>
             <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
-                <Card.Text>
-                    <p>{item.desc}</p>
-                </Card.Text>
-                <Button variant="success">Comprar</Button>
+                <Button variant="success">Ver detalle del producto</Button>
             </Card.Body>
+            <Card.Footer>
+                <p>Stock disponible: {item.stock}</p>
+            </Card.Footer>
         </Card>
     )
 }
