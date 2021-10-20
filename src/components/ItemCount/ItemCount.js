@@ -6,7 +6,7 @@ import './ItemCount.css';
 export const ItemCount=({inital, stock})=>{
     const [counter, setCounter]=useState(parseInt(inital));
     const add =()=>{
-        if(counter<5){
+        if(counter<stock){
             setCounter(counter+1);
             console.log(counter);
         }else{
@@ -15,7 +15,7 @@ export const ItemCount=({inital, stock})=>{
         
     }
     const decreace =()=>{
-        if(counter>1){
+        if(counter>inital){
             setCounter(counter-1);
         }else{
             alert('No podés quitar más productos');
