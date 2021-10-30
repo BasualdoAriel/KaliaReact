@@ -4,7 +4,7 @@ import { useState } from "react";
 import './ItemCount.css';
 
 export const ItemCount=({inital, stock})=>{
-    const [counter, setCounter]=useState(parseInt(inital));
+    const [counter, setCounter]=useState(inital);
     const add =()=>{
         if(counter<stock){
             setCounter(counter+1);
