@@ -7,13 +7,13 @@ export const ItemDetail =({item})=>{
     console.log(item)
     return(
         <Container className="mt-5 itemDContainer p-3">
-        <Row>
+        {<Row>
             <Col>
-                <Card className="itemCard">
+                <Card className="itemBorderContainer">
                     <Card.Img variant="bottom" src={item.img} className="itemImg"/>
                 </Card>
             </Col>
-            <Col className="itemDContainer">
+            <Col className="itemDContainer itemBorderContainer">
                 <Container>
                     <h3>{item.name}</h3>
                     <br/>
@@ -47,7 +47,7 @@ export const ItemDetail =({item})=>{
                     </div>
                 </Container>
             </Col>
-        </Row>
+        </Row>}
         
     </Container>
     )

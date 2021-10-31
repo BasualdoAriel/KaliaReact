@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { useEffect, useState } from "react";
 
@@ -27,12 +27,12 @@ export const ItemDetailContainer=()=>{
         (result)=>{
             setItem(result)
         });        
-    },[])
+    },[item])
     console.log(item)
 
     return(
-        <Container>
-            <ItemDetail item={item}/>
+        <Container className="text-center">
+            {item? <ItemDetail item={item}/> : <Spinner animation="border"/>}
         </Container>
     )
 }
