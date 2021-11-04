@@ -4,7 +4,7 @@ import './ItemDetail.css'
 import camion from '../../images/camion.png'
 
 export const ItemDetail =({item})=>{
-    console.log(item)
+    
     return(
         <Container className="mt-5 itemDContainer p-3">
         {<Row>

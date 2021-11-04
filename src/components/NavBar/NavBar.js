@@ -1,27 +1,29 @@
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import logo from '../NavBar/images/logoOscuro.jpg'
 import { CartWidget } from "../CartWidget/CartWidget";
+import {NavLink, Link} from 'react-router-dom'
 import './NavBar.css'
 
 export function NavBar(){
+
     return(
         <Navbar bg="dark" expand="lg" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">
-                    <img src={logo} className="imgLogo" alt=""/>
+                <Navbar.Brand href="#home"><Link to='/'><img src={logo} className="imgLogo" alt=""/></Link>
+                    
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#link">Nosotros</Nav.Link>
-                    <NavDropdown title="Productos" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Accesorios para el pelo</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Acero</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Billeteras</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.4">Medias</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.5">Riñoneras</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.6">Ruanas</NavDropdown.Item>
+                    <Nav.Link href="#home"><Link to="/" className="home">Home</Link></Nav.Link>
+                    <Nav.Link href="#link"></Nav.Link>
+                    <NavDropdown title="Productos" id="basic-nav-dropdown" >
+                        <div className="d-flex flex-column">
+                            <NavLink to="/category/bille" activeClassName="linkCatA" className="linkCat px-3">Billeteras</NavLink>
+                            <NavLink to="/category/medias" activeClassName="linkCatA" className="linkCat px-3">Medias</NavLink>
+                            <NavLink to="/category/rinio" activeClassName="linkCatA" className="linkCat px-3">Riñoneras</NavLink>
+                        </div>
+                        
                     </NavDropdown>
                 </Nav>
                 <Nav className="justify-content-end">

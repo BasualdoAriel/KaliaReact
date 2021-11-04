@@ -1,0 +1,56 @@
+{
+    "RinioKalia":{
+            "cat":"rinio",
+            "price":800,
+            "name":"Riñonera Kalia", 
+            "img":"https://basualdoariel.github.io/KaliaAccesorios/images/Rinio.jpg", 
+            "desc":"Riñonera negra de eco cuero ♻️ con correa regulable.", 
+            "stock": 3
+        },
+    
+        "RinioKaliaAm":{
+            "cat":"rinio",
+            "price": "850",
+            "name": "Rinionera KALIA amarilla",
+            "img": "https://basualdoariel.github.io/KaliaAccesorios/images/rinio1.jpeg",
+            "desc":"Riñonera amarilla de eco cuero ♻️ con correa regulable",
+            "stock": 2
+        },   
+
+    "BilleSirena":{
+        "cat":"billetera",
+        "price": 730, 
+        "name":"Billetera sirena", 
+        "img":"https://basualdoariel.github.io/KaliaAccesorios/images/bille4.jpeg", 
+        "desc":"Mini billetera sirena con 4 tarjeteros💳, monedero 🪙 y espacio para dinero 💵.",
+        "stock": 5
+    },
+
+    "BilleDRosa":{
+        "cat":"billetera",
+        "price": "730",
+        "name": "Billetera DIAMANTE rosa",
+        "img": "https://basualdoariel.github.io/KaliaAccesorios/images/bille1.jpeg",
+        "des":"Billera de diamantes rosa, con 4 tarjeteros💳, monedero 🪙 y espacio para dinero 💵. ",
+        "stock": 4
+    },
+
+    "MediaBanana":{
+        "cat":"media",
+        "price": 280, 
+        "name":"Medias Banana", 
+        "img":"https://basualdoariel.github.io/KaliaAccesorios/images/medias4.jpg", 
+        "desc":"Media 3/4 de algodón. Abarcan de talle desde 36-42 🧦.", 
+        "stock": 4
+    },
+    "MediaRickyFort": {
+        "cat":"media",
+        "price": "280",
+        "name": "Medias Ricardo Fort",
+        "img": "https://basualdoariel.github.io/KaliaAccesorios/images/medias1.jpg",
+        "desc":"Media 3/4 de algodón, con la cara del comandante. Abarcan de talle desde 36-42 🧦.",
+        "stock": 5
+        
+    }
+
+}

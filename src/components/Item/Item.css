@@ -2,3 +2,12 @@
     height: 286px;
     width: 286px;
 }
+.linkProduct,.linkProductA{
+    color: white;
+    text-decoration: none;
+}
+
+.linkProductA:hover, .linkProduct:hover{
+    text-decoration: none;
+    color: rgb(255, 220, 64);
+}
