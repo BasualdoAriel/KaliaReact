@@ -3,3 +3,12 @@
     border: solid rgba(77, 64, 64, 0.555);
     margin: 6px;
 }
+.itemBack{
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0.575) !important;
+}
+
+.linkCartA,.linkCart{
+    color: white;
+    text-decoration: none;
+}

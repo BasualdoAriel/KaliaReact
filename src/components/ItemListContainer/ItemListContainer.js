@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import {ItemCount } from "../ItemCount/ItemCount";
+/* import {ItemCount } from "../ItemCount/ItemCount"; */
 import {ItemList} from '../ItemList/ItemList'
 import { useState, useEffect } from "react";
 import {useParams} from 'react-router-dom';
@@ -105,7 +105,7 @@ export const ItemListContainer= ()=>{
         <Container className="text-center">
             <h1 className="pb-4">Kalia Accesorios</h1>
             <ItemList items={products}/>
-            <ItemCount  inital={1} stock={5}/>
+            {/* <ItemCount  inital={1} stock={5}/> */}
         </Container>
         
     );    

@@ -1,13 +1,30 @@
 import { Container, Col, Row, Card, Button} from "react-bootstrap"
 import './ItemDetail.css'
+import {ItemCount} from '../ItemCount/ItemCount';
 
 import camion from '../../images/camion.png'
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
+
+const cartArray=[];
 
 export const ItemDetail =({item})=>{
+    console.log(cartArray)
+    const [cart, setCart]=useState(item.name)
+
     
+    const onAdd=(evt)=>{
+        evt.preventDefault();
+        setCart(
+            cartArray.push(cart)
+        )
+        console.log(cartArray)
+    }
+
     return(
         <Container className="mt-5 itemDContainer p-3">
-        {<Row>
+        <Row>
             <Col>
                 <Card className="itemBorderContainer">
                     <Card.Img variant="bottom" src={item.img} className="itemImg"/>
@@ -31,23 +48,17 @@ export const ItemDetail =({item})=>{
                         </div> 
                     </Container>
                     <Container className="text-center">
-                        <Row className="pb-2 pt-5">
+                        <Row className="pb-2 pt-3">
                             <Col>
-                                <span className="itemStock">Stock disponible</span>
-                            </Col>
-                            <Col>
-                                <span className="itemStock">{item.stock}</span>
+                                <span className="itemStock">Stock disponible: {item.stock}</span>
+                                {!cartArray.includes(item.name)?<ItemCount initial={0} stock={item.stock} onAdd={onAdd} className="itemStock"/>:<Button variant="success"><NavLink to="/cart" activeClassName="linkCartA" className="linkCart" >Finalziar Compra</NavLink></Button>}                    
                             </Col>
                         </Row>
                             
                     </Container>
-                    <div className="text-center pt-5">
-                        <Button className="mx-2" variant="success">Agregar al carrito</Button>
-                        <Button variant="success">Comprar</Button>
-                    </div>
                 </Container>
             </Col>
-        </Row>}
+        </Row>
         
     </Container>
     )
