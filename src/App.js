@@ -4,23 +4,24 @@ import {ItemListContainer} from './components/ItemListContainer/ItemListContaine
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import {Cart} from './components/Cart/Cart';
+import {CartProvider} from './contexts/CartContext'
 
 
 function App() {
-  return (
-    <BrowserRouter>
-        <NavBar/>
-        
-      <Switch>
-          <Route exact path="/" component={ItemListContainer}/>
-          <Route exact path="/item/:id" component={ItemDetailContainer}/>
-          <Route exact path="/category/:catId" component={ItemListContainer} />
-          <Route exact path ="/cart" component={Cart}/>
-      </Switch>
-    </BrowserRouter>
-    
-    
-  );
+    return (
+        <CartProvider>
+            <BrowserRouter>
+                <NavBar/>
+                <Switch>
+                    
+                        <Route exact path="/" component={ItemListContainer}/>
+                        <Route exact path="/item/:id" component={ItemDetailContainer}/>
+                        <Route exact path="/category/:catId" component={ItemListContainer} />
+                        <Route exact path ="/cart" component={Cart}/>
+                </Switch>
+            </BrowserRouter>
+        </CartProvider>
+    );
 }
 
 export default App;

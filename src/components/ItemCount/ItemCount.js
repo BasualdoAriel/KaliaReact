@@ -2,8 +2,13 @@ import { Button, Container, Card } from "react-bootstrap";
 import {NavLink} from 'react-router-dom';
 import { useState } from "react";
 import './ItemCount.css';
+import { useCart } from "../../contexts/CartContext";
 
-export const ItemCount=({initial, stock, onAdd})=>{
+
+export const ItemCount=({initial, stock, item})=>{
+
+    const {addItem}=useCart()
+
     const [counter, setCounter]=useState(initial);
     const add =()=>{
         if(counter<stock){
@@ -30,7 +35,7 @@ export const ItemCount=({initial, stock, onAdd})=>{
                     <Button variant="danger" onClick={decreace}size="sm">-</Button>
                 </Card.Body>
                 <Card.Footer>
-                    <Button variant="success" onClick={onAdd}>Agregar al carrito</Button>
+                    <Button variant="success" onClick={()=>{addItem(item,counter)}}>Agregar al carrito</Button>
                     <Button variant="success"><NavLink to="/cart" activeClassName="linkCartA" className="linkCart" >Finalziar Compra</NavLink></Button>
                 </Card.Footer>
             </Card>

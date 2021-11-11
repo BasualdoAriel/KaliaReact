@@ -1,26 +1,11 @@
-import { Container, Col, Row, Card, Button} from "react-bootstrap"
+import { Container, Col, Row, Card} from "react-bootstrap"
 import './ItemDetail.css'
 import {ItemCount} from '../ItemCount/ItemCount';
 
 import camion from '../../images/camion.png'
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
 
-
-const cartArray=[];
 
 export const ItemDetail =({item})=>{
-    console.log(cartArray)
-    const [cart, setCart]=useState(item.name)
-
-    
-    const onAdd=(evt)=>{
-        evt.preventDefault();
-        setCart(
-            cartArray.push(cart)
-        )
-        console.log(cartArray)
-    }
 
     return(
         <Container className="mt-5 itemDContainer p-3">
@@ -51,7 +36,7 @@ export const ItemDetail =({item})=>{
                         <Row className="pb-2 pt-3">
                             <Col>
                                 <span className="itemStock">Stock disponible: {item.stock}</span>
-                                {!cartArray.includes(item.name)?<ItemCount initial={0} stock={item.stock} onAdd={onAdd} className="itemStock"/>:<Button variant="success"><NavLink to="/cart" activeClassName="linkCartA" className="linkCart" >Finalziar Compra</NavLink></Button>}                    
+                                <ItemCount initial={0} stock={item.stock}  item={item} className="itemStock"/>                   
                             </Col>
                         </Row>
                             

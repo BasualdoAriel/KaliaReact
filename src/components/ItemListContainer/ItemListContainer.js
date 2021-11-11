@@ -105,7 +105,6 @@ export const ItemListContainer= ()=>{
         <Container className="text-center">
             <h1 className="pb-4">Kalia Accesorios</h1>
             <ItemList items={products}/>
-            {/* <ItemCount  inital={1} stock={5}/> */}
         </Container>
         
     );    
