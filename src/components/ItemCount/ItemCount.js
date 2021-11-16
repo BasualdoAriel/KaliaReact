@@ -2,18 +2,15 @@ import { Button, Container, Card } from "react-bootstrap";
 import {NavLink} from 'react-router-dom';
 import { useState } from "react";
 import './ItemCount.css';
-import { useCart } from "../../contexts/CartContext";
 
 
-export const ItemCount=({initial, stock, item})=>{
 
-    const {addItem}=useCart()
+export const ItemCount=({initial, stock, onAdd})=>{
 
     const [counter, setCounter]=useState(initial);
     const add =()=>{
         if(counter<stock){
             setCounter(counter+1);
-            console.log(counter);
         }else{
             alert('No podés agregar más productos');
         }
@@ -35,7 +32,7 @@ export const ItemCount=({initial, stock, item})=>{
                     <Button variant="danger" onClick={decreace}size="sm">-</Button>
                 </Card.Body>
                 <Card.Footer>
-                    <Button variant="success" onClick={()=>{addItem(item,counter)}}>Agregar al carrito</Button>
+                    <Button variant="success" onClick={()=>{onAdd(counter); setCounter(0)}}>Agregar al carrito</Button>
                     <Button variant="success"><NavLink to="/cart" activeClassName="linkCartA" className="linkCart" >Finalziar Compra</NavLink></Button>
                 </Card.Footer>
             </Card>

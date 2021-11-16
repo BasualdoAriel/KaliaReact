@@ -1,11 +1,24 @@
 import { Container, Col, Row, Card} from "react-bootstrap"
 import './ItemDetail.css'
 import {ItemCount} from '../ItemCount/ItemCount';
+import { useCart } from "../../contexts/CartContext";
 
 import camion from '../../images/camion.png'
 
 
+
 export const ItemDetail =({item})=>{
+    const {addItem}=useCart()
+
+    const onAdd=(counter)=>{
+        let quantity=counter;
+        if(quantity>0){
+            addItem(item, quantity)
+            return;
+        }else{
+            alert('No agregaste productos')
+        }
+    }
 
     return(
         <Container className="mt-5 itemDContainer p-3">
@@ -36,7 +49,7 @@ export const ItemDetail =({item})=>{
                         <Row className="pb-2 pt-3">
                             <Col>
                                 <span className="itemStock">Stock disponible: {item.stock}</span>
-                                <ItemCount initial={0} stock={item.stock}  item={item} className="itemStock"/>                   
+                                <ItemCount initial={0} stock={item.stock}  onAdd={onAdd} className="itemStock"/>                   
                             </Col>
                         </Row>
                             
