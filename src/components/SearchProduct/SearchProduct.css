@@ -1,0 +1,13 @@
+.bg-Search{
+    background-color: rgba(126, 90, 90, 0.205);
+}
+
+.linkHome,.linkHomeA{
+    color: white;
+    text-decoration: none;
+}
+
+.linkHome:hover, .linkHomeA:hover{
+    text-decoration: none;
+    color: rgb(255, 220, 64);
+}

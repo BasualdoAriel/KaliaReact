@@ -1,7 +1,6 @@
 
 import { createContext, useState, useContext } from "react";
 
-
 export const CartContext=createContext();
 
 export const useCart=()=>useContext(CartContext);
@@ -32,7 +31,6 @@ export const CartProvider=({children})=>{
       return
     }
 
-
     const itemsOnCart=(cartContent)=>{
         let items=0;
         cartContent.forEach(item => {
@@ -42,24 +40,28 @@ export const CartProvider=({children})=>{
         return items;
     }
 
+    const finalPrice=(cartContent)=>{
+        let finalPrice=0;
+        if(cartContent){
+            cartContent.forEach(item=>{
+                finalPrice=finalPrice+(item.quantity*item.price);
+            })
+        }
+        
+        return finalPrice
+    }
+
+    const deleteItem=(item)=>{
+        setCartContent(cartContent.filter((product) => product.name !== item))
+
+    }
+
+
     const clear=()=>{
         console.log('limpio carro')
         setCartContent([]);
     }
 
-    return <CartContext.Provider value= {{cartContent, addItem, clear, itemsOnCart}}>{children}</CartContext.Provider>
+    return <CartContext.Provider value= {{cartContent, addItem, clear, itemsOnCart, finalPrice, deleteItem}}>{children}</CartContext.Provider>
 
 }
-
-/* alert(`El producto ya está en el carrito, agregamos ${quantity} más.`)
-const existentItem=cartContent.find((prod)=>prod.id===item.id);
-existentItem.quantity=existentItem.quantity+quantity;
-setCartContent(cartContent.filter((product)=>product.id!==existentItem.id))
-console.log('filter',cartContent.filter((product)=>product.id!==existentItem.id))
-console.log('existent',existentItem)
-console.log('cartc',cartContent)
-
-if(existentItem.quantity>existentItem.stock){
-    
-    alert('Intentate agregar más productos que el stock disponible, agregamos solo que hay en stock.')
-    existentItem.quantity= existentItem.stock */

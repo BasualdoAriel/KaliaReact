@@ -1,0 +1,7 @@
+.finalPrice{
+    background-color: rgba(126, 90, 90, 0.205);
+}
+
+.row{
+    --bs-gutter-x: 0rem !important;
+}
