@@ -1,27 +1,28 @@
 {
   "files": {
-    "main.css": "/KaliaReact/static/css/main.dfcb4d51.chunk.css",
-    "main.js": "/KaliaReact/static/js/main.b452ca97.chunk.js",
-    "main.js.map": "/KaliaReact/static/js/main.b452ca97.chunk.js.map",
-    "runtime-main.js": "/KaliaReact/static/js/runtime-main.c179dcaf.js",
-    "runtime-main.js.map": "/KaliaReact/static/js/runtime-main.c179dcaf.js.map",
+    "main.css": "/KaliaReact/static/css/main.6c2e49de.chunk.css",
+    "main.js": "/KaliaReact/static/js/main.5a8ebc63.chunk.js",
+    "main.js.map": "/KaliaReact/static/js/main.5a8ebc63.chunk.js.map",
+    "runtime-main.js": "/KaliaReact/static/js/runtime-main.2f752d97.js",
+    "runtime-main.js.map": "/KaliaReact/static/js/runtime-main.2f752d97.js.map",
     "static/css/2.0a9ec390.chunk.css": "/KaliaReact/static/css/2.0a9ec390.chunk.css",
-    "static/js/2.f82d1eb9.chunk.js": "/KaliaReact/static/js/2.f82d1eb9.chunk.js",
-    "static/js/2.f82d1eb9.chunk.js.map": "/KaliaReact/static/js/2.f82d1eb9.chunk.js.map",
-    "static/js/3.7c11a4f5.chunk.js": "/KaliaReact/static/js/3.7c11a4f5.chunk.js",
-    "static/js/3.7c11a4f5.chunk.js.map": "/KaliaReact/static/js/3.7c11a4f5.chunk.js.map",
+    "static/js/2.7bc12fb8.chunk.js": "/KaliaReact/static/js/2.7bc12fb8.chunk.js",
+    "static/js/2.7bc12fb8.chunk.js.map": "/KaliaReact/static/js/2.7bc12fb8.chunk.js.map",
+    "static/js/3.61aa8c7f.chunk.js": "/KaliaReact/static/js/3.61aa8c7f.chunk.js",
+    "static/js/3.61aa8c7f.chunk.js.map": "/KaliaReact/static/js/3.61aa8c7f.chunk.js.map",
     "index.html": "/KaliaReact/index.html",
     "static/css/2.0a9ec390.chunk.css.map": "/KaliaReact/static/css/2.0a9ec390.chunk.css.map",
-    "static/css/main.dfcb4d51.chunk.css.map": "/KaliaReact/static/css/main.dfcb4d51.chunk.css.map",
-    "static/js/2.f82d1eb9.chunk.js.LICENSE.txt": "/KaliaReact/static/js/2.f82d1eb9.chunk.js.LICENSE.txt",
+    "static/css/main.6c2e49de.chunk.css.map": "/KaliaReact/static/css/main.6c2e49de.chunk.css.map",
+    "static/js/2.7bc12fb8.chunk.js.LICENSE.txt": "/KaliaReact/static/js/2.7bc12fb8.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/KaliaReact/static/media/back.59712acf.jpg",
     "static/media/cart.7729f0e1.png": "/KaliaReact/static/media/cart.7729f0e1.png",
     "static/media/logoOscuro.3d06cb56.jpg": "/KaliaReact/static/media/logoOscuro.3d06cb56.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c179dcaf.js",
+    "static/js/runtime-main.2f752d97.js",
     "static/css/2.0a9ec390.chunk.css",
-    "static/js/2.f82d1eb9.chunk.js",
-    "static/css/main.dfcb4d51.chunk.css",
-    "static/js/main.b452ca97.chunk.js"
+    "static/js/2.7bc12fb8.chunk.js",
+    "static/css/main.6c2e49de.chunk.css",
+    "static/js/main.5a8ebc63.chunk.js"
   ]
 }
