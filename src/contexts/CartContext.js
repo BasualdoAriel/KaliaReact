@@ -34,7 +34,6 @@ export const CartProvider=({children})=>{
     const itemsOnCart=(cartContent)=>{
         let items=0;
         cartContent.forEach(item => {
-            console.log(item.quantity)
             items=items+item.quantity
         });
         return items;

@@ -35,3 +35,7 @@ b{
 .deleteProduct{
     font-weight: 500;
 }
+.price{
+    font-style: italic;
+    font-weight: bold;
+}

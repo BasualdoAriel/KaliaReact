@@ -9,8 +9,8 @@ export function Item({item}){
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={item.img} className="imgCard"/>
             <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
-                <Button variant="dark"><NavLink to={`/item/${item.id}`} activeClassName="linkProductA" className="linkProduct">Ver detalle del producto</NavLink></Button>
+                <Card.Title className="itemName">{item.name}</Card.Title>
+                <Button variant="dark"><NavLink to={`/item/${item.id}`} activeClassName="linkProductA" className="linkProduct">Ver</NavLink></Button>
             </Card.Body>
             <Card.Footer>
                 <p>Stock disponible: {item.stock}</p>

@@ -27,13 +27,13 @@ export const ItemCount=({initial, stock, onAdd})=>{
         <Container className="d-flex justify-content-center pb-3 pt-2">
             <Card style={{ width: '18rem' }} className="itemBack">
                 <Card.Body className="d-flex justify-content-center">
-                    <Button variant="success" onClick={add} size="sm">+</Button>
-                    <p className="value">{counter} de {stock}</p>
                     <Button variant="danger" onClick={decreace}size="sm">-</Button>
+                    <p className="value">{counter} de {stock}</p>
+                    <Button variant="success" onClick={add} size="sm">+</Button>
                 </Card.Body>
                 <Card.Footer>
                     <Button variant="success" onClick={()=>{onAdd(counter); setCounter(0)}}>Agregar al carrito</Button>
-                    <Button variant="success"><NavLink to="/cart" activeClassName="linkCartA" className="linkCart" >Finalziar Compra</NavLink></Button>
+                    <Button variant="success"><NavLink to="/cart" activeClassName="linkCartA" className="linkCart" >Finalizar Compra</NavLink></Button>
                 </Card.Footer>
             </Card>
         </Container>
