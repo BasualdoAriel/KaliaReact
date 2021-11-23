@@ -1,5 +1,5 @@
-
 import { Container, Row, Col, Button } from "react-bootstrap"
+import { NavLink } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext"
 import { CartRow } from "../CartRow/CartRow";
 import { SearchProduct } from "../SearchProduct/SearchProduct";
@@ -7,6 +7,7 @@ import './Cart.css'
 
 export const Cart=()=>{
     const {cartContent, finalPrice, clear}=useCart();
+    
     return(
     <>
         <Container className="pt-3">
@@ -20,9 +21,11 @@ export const Cart=()=>{
                         <h4 className="price">TOTAL: ${finalPrice(cartContent)}</h4>
                 </Col>
                 <Col>
-                    <Button variant="success" className="mx-2" onClick={()=>console.log('Compraste')}>Comprar</Button>
+                    <Button variant="success"><NavLink to="/checkout" activeClassName="buyA" className="buy">Comprar</NavLink></Button>
                     <Button variant="danger" onClick={clear}>Vaciar carrito</Button>
+
                 </Col>
+                
             </Row>:<SearchProduct/>}
         </Container>
     </>

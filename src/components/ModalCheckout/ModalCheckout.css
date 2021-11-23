@@ -1,0 +1,8 @@
+.closeA, .close{
+    color: #0d6efd;
+    text-decoration: none;
+}
+.close:hover, .closeA:hover{
+    color: white;
+    text-decoration: none;
+}

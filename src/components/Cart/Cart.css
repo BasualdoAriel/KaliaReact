@@ -5,3 +5,13 @@
 .row{
     --bs-gutter-x: 0rem !important;
 }
+
+.buyA,.buy{
+    color: white;
+    text-decoration: none;
+}
+
+.buy:hover, .buyA:hover{
+    color: white;
+    text-decoration: none;
+}

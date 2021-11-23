@@ -1,5 +1,10 @@
 
+import { getFirestore } from "../firebase";
 import { createContext, useState, useContext } from "react";
+import {
+    collection,
+    addDoc,
+} from "firebase/firestore"
 
 export const CartContext=createContext();
 
@@ -7,6 +12,7 @@ export const useCart=()=>useContext(CartContext);
 
 export const CartProvider=({children})=>{
     const[cartContent, setCartContent]=useState([])  
+    const[orderId, setOrderId]=useState('');
 
     const addItem=(item, quantity)=>{
         const newItem={...item, quantity:quantity}
@@ -52,15 +58,25 @@ export const CartProvider=({children})=>{
 
     const deleteItem=(item)=>{
         setCartContent(cartContent.filter((product) => product.name !== item))
-
     }
-
 
     const clear=()=>{
-        console.log('limpio carro')
         setCartContent([]);
     }
+    
+    const createOrder=(userInfo)=>{
+        const order={
+            buyer:userInfo,
+            items:cartContent,
+            total:finalPrice(cartContent)
+        }
+        const db = getFirestore();
+        const orderCollection=collection(db, "orders");
+        addDoc(orderCollection, order).then(({id})=>setOrderId(id))
+        clear();
+    }
 
-    return <CartContext.Provider value= {{cartContent, addItem, clear, itemsOnCart, finalPrice, deleteItem}}>{children}</CartContext.Provider>
+
+    return <CartContext.Provider value= {{cartContent, addItem, clear, itemsOnCart, finalPrice, deleteItem, createOrder, orderId}}>{children}</CartContext.Provider>
 
 }

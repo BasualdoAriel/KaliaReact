@@ -5,15 +5,12 @@ import {useParams} from 'react-router-dom';
 import { getFirestore } from '../../firebase';
 import{ collection, query, where,getDocs} from 'firebase/firestore'
 
-/*  */
-
 
 export const ItemListContainer= ()=>{
     const [products, setProducts]=useState(null)
     let category=useParams()
 
     useEffect(()=>{
-        console.log(category.catId)
         const db=getFirestore()
         if(Object.keys(category).length===0){
             const q= query(
