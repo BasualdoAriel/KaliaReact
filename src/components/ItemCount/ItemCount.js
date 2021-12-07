@@ -2,6 +2,7 @@ import { Button, Container, Card } from "react-bootstrap";
 import {NavLink} from 'react-router-dom';
 import { useState } from "react";
 import './ItemCount.css';
+import swal from "sweetalert";
 
 
 
@@ -12,7 +13,12 @@ export const ItemCount=({initial, stock, onAdd})=>{
         if(counter<stock){
             setCounter(counter+1);
         }else{
-            alert('No podés agregar más productos');
+            swal({
+                title:"Ups...",
+                text:'No podés agregar más 😥',
+                icon: "info",
+                button:"X"
+            })
         }
         
     }
@@ -20,7 +26,12 @@ export const ItemCount=({initial, stock, onAdd})=>{
         if(counter>initial){
             setCounter(counter-1);
         }else{
-            alert('No podés quitar más productos');
+            swal({
+                title:"Ups...",
+                text:'No podés quitar más 😥',
+                icon: "info",
+                button:"X"
+            })
         }
     }
     return(

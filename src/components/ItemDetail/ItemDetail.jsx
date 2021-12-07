@@ -2,6 +2,7 @@ import { Container, Col, Row, Card} from "react-bootstrap"
 import './ItemDetail.css'
 import {ItemCount} from '../ItemCount/ItemCount';
 import { useCart } from "../../contexts/CartContext";
+import swal from "sweetalert";
 
 import camion from '../../images/camion.png'
 
@@ -16,7 +17,12 @@ export const ItemDetail =({item})=>{
             addItem(item, quantity)
             return;
         }else{
-            alert('No agregaste productos')
+            swal({
+                title:"Ups...",
+                text:"No agregaste productos 😥",
+                icon:"warning",
+                button:"X"
+            })
         }
     }
 

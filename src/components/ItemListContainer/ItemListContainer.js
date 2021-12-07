@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import {useParams} from 'react-router-dom';
 import { getFirestore } from '../../firebase';
 import{ collection, query, where,getDocs} from 'firebase/firestore'
-
+import './ItemListContainer.css'
+import { Footer } from "../Footer/Footer";
 
 export const ItemListContainer= ()=>{
     const [products, setProducts]=useState(null)
@@ -44,8 +45,10 @@ export const ItemListContainer= ()=>{
     
     return(
         <Container className="text-center">
-            <h1 className="pb-4">Kalia Accesorios</h1>
+            <h1 className="pb-4 title">KALIA</h1>
+            <h3 className="subTitle">Accesorios</h3>
             <ItemList items={products}/>
+            <Footer/>
         </Container>
         
     );    

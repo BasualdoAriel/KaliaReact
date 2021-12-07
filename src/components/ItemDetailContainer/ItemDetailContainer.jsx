@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom'
 import{ getDoc, doc} from 'firebase/firestore'
 import { getFirestore } from '../../firebase';
+import { Footer } from "../Footer/Footer";
 
 export const ItemDetailContainer=()=>{
     let producto= useParams();
@@ -22,6 +23,7 @@ export const ItemDetailContainer=()=>{
     return(
         <Container className="text-center">
             {item? <ItemDetail item={item}/> : <Spinner animation="border"/>}
+            <Footer/>
         </Container>
     )
 }

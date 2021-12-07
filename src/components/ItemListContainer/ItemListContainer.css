@@ -1,0 +1,14 @@
+.title{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+    letter-spacing: 10px;
+}
+
+.subTitle{
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    padding-left: 16vh;
+    margin-top: -50px;
+}

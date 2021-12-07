@@ -2,6 +2,7 @@ import { Container, Row, Col, Button } from "react-bootstrap"
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext"
 import { CartRow } from "../CartRow/CartRow";
+import { Footer } from "../Footer/Footer";
 import { SearchProduct } from "../SearchProduct/SearchProduct";
 import './Cart.css'
 
@@ -27,7 +28,8 @@ export const Cart=()=>{
                 </Col>
                 
             </Row>:<SearchProduct/>}
-        </Container>
+            <Footer/>
+        </Container> 
     </>
     )
 }

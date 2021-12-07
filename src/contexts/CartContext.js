@@ -5,6 +5,8 @@ import {
     collection,
     addDoc,
 } from "firebase/firestore"
+import swal from "sweetalert";
+
 
 export const CartContext=createContext();
 
@@ -18,16 +20,31 @@ export const CartProvider=({children})=>{
         const newItem={...item, quantity:quantity}
         const isInCart=cartContent.some((prod)=>prod.name===item.name);
         if(!isInCart){
-            alert(`Agregaste el producto: ${item.name} x ${quantity}`)
+            swal({
+                title:"Agregaste productos!",
+                text:`Agregaste el producto: ${item.name} x ${quantity}`,
+                icon:"success",
+                button:"X"
+            })
             setCartContent([...cartContent,newItem])
 
         }else{
-            alert(`El producto ya está en el carrito, agregamos ${quantity} más.`)
+            swal({
+                title:"Actualizamos el carrito!",
+                text:`${item.name} ya estaba en el carrito, agregamos ${quantity} más`,
+                icon:"success",
+                button:"X"
+            })
             cartContent.forEach((prod)=>{
                 if(prod.name===item.name){
                     prod.quantity=prod.quantity+quantity
                     if(prod.quantity>prod.stock){
-                        alert('máximo de productos')
+                        swal({
+                            title:"Actualizamos el carrito!",
+                            text:`Agregaste todo el stock disponble de ${item.name} | Total: ${item.stock}`,
+                            icon:"success",
+                            button:"X"
+                        })
                         prod.quantity=prod.stock;
                     }
                 }

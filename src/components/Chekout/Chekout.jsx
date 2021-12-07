@@ -1,14 +1,13 @@
 import {Button, Container, Form} from 'react-bootstrap'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ModalCheckout } from '../ModalCheckout/ModalCheckout';
 import { useCart } from '../../contexts/CartContext';
 import './Checkout.css'
-
-
-
+import { Footer } from '../Footer/Footer';
 
 export const CheckOut=()=>{
     const [modalShow, setModalShow]=useState(false)
+    const [button, setButton]=useState(true)
     const [userInfo, setUserInfo]=useState({
         name:"",
         email: "",
@@ -39,6 +38,14 @@ export const CheckOut=()=>{
         setModalShow(true);
     }
 
+    useEffect(()=>{
+        if((!isNaN(userInfo.cel))&&((userInfo.email).includes("@"))&&((userInfo.email).includes(".com"))){
+            setButton(false);
+        }if(userInfo.cel===''){
+            setButton(true);
+        }
+    },[userInfo.cel, userInfo.email])
+
     return(
         <Container className="text-center">
             <h3>Ingresá tus datos!</h3>
@@ -57,10 +64,10 @@ export const CheckOut=()=>{
                         </Form.Group>
                     ))
                 }
-                <Button onClick={()=>sendOrder()}>Confirmar</Button>
+                <Button onClick={()=>sendOrder()} disabled={button}>Confirmar</Button>
                 </Form>
                 <ModalCheckout show={modalShow} onHide={()=>setModalShow(false)}/>
-            
+                <Footer/>
         </Container>
     )
 
